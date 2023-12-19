@@ -123,14 +123,17 @@
       <div class="contact">
         <div class="cc">
           <div><h2>Contact form</h2></div>
-          <div>
-            <input
-              type="text"
-              placeholder="Put your email for to contact you"
-            />
+          <form name="contact" method="POST" data-netlify="true">
+            <div>
+              <input
+                type="text"
+                placeholder="Put your email for to contact you"
+              />
+  
+            <div><button type="submit">Send</button></div>
           </div>
-          <div><button>Send</button></div>
-        </div>
+          </form>
+
       </div>
     </main>
   </body>
