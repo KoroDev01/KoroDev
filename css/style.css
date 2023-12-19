@@ -19,8 +19,8 @@
   --light: #00c3ff;
   --primary: #2071e7;
   --lighter: rgb(44, 164, 216);
-  --text: #333;
-  --background: #c0c1c0;
+  --text: #adadad;
+  --background: #474646;
   --hint: #999;
   --border: #ddd;
 }
@@ -39,7 +39,7 @@
 /* Portrait tablet to landscape and desktop */
 /* Large desktop */
 header {
-  background: linear-gradient(to right, rgb(17, 6, 6));
+  background: #000000;
   display: flex;
   flex-direction: row wrap;
   height: 100px;
@@ -64,6 +64,7 @@ header .logo h1 {
   font-family: var(--font-familylogo);
   font-size: 2.5rem;
   padding: 0 0 0 0.5rem;
+  color: white;
 }
 @media (max-width: 480px) {
   header .logo h1 {
@@ -97,7 +98,7 @@ header ul li:hover {
 }
 header ul li a {
   text-decoration: none;
-  color: black;
+  color: rgb(255, 255, 255);
   font-family: var(--font-family2);
   font-size: 1.5rem;
 }
@@ -117,7 +118,7 @@ header ul li a {
   padding-bottom: 1rem;
   font-size: 4rem;
   font-family: var(--font-family4);
-  color: var(--text);
+  color: white;
 }
 @media (max-width: 480px) {
   .welcome .welcome-content p {
@@ -128,8 +129,7 @@ header ul li a {
   padding-bottom: 0rem;
   font-family: var(--font-family3);
   font-size: 4rem;
-  color: var(--text);
-  color: var(--text);
+  color: white;
 }
 @media (max-width: 480px) {
   .welcome .welcome-content h2 {
@@ -183,7 +183,7 @@ header ul li a {
   align-content: center;
   justify-content: center;
   text-align: center;
-  background: #dfdddd no-repeat;
+  background: #313131 no-repeat;
   height: 200px;
 }
 @media (max-width: 480px) {
@@ -193,6 +193,7 @@ header ul li a {
 }
 .about-me .about-me-content {
   font-size: 1.5rem;
+  color: white;
 }
 @media (max-width: 480px) {
   .about-me .about-me-content {
@@ -222,7 +223,7 @@ header ul li a {
   flex-direction: column;
   text-align: center;
   color: white;
-  background: var(--text);
+  background: #3e3e3e;
 }
 .contact .cc {
   height: 100px;
@@ -261,8 +262,9 @@ header ul li a {
 .contact .cc button {
   font-size: 2rem;
   width: 5rem;
-  background: var(--background);
+  background: black;
   border: 0;
+  color: white;
   cursor: pointer;
   transition: all 0.2sec;
 }
@@ -277,6 +279,8 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
+  background: #000000;
 }
 
 /*# sourceMappingURL=style.css.map */

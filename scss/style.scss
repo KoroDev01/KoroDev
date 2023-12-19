@@ -7,7 +7,7 @@
 // header
 
 header {
-  background: linear-gradient(to right, rgb(17, 6, 6));
+  background: #000000;
   display: flex;
   flex-direction: row wrap;
   height: 100px;
@@ -29,6 +29,7 @@ header {
       font-family: var(--font-familylogo);
       font-size: 2.5rem;
       padding: 0 0 0 0.5rem;
+      color: white;
       @include xs {
         font-size: 1rem;
       }
@@ -58,7 +59,7 @@ header {
 
       a {
         text-decoration: none;
-        color: black;
+        color: rgb(255, 255, 255);
         font-family: var(--font-family2);
         font-size: 1.5rem;
       }
@@ -83,7 +84,7 @@ header {
       padding-bottom: 1rem;
       font-size: 4rem;
       font-family: var(--font-family4);
-      color: var(--text);
+      color: white;
       @include xs {
         font-size: 2.2rem;
       }
@@ -92,8 +93,7 @@ header {
       padding-bottom: 0rem;
       font-family: var(--font-family3);
       font-size: 4rem;
-      color: var(--text);
-      color: var(--text);
+      color: white;
       @include xs {
         font-size: 2rem;
       }
@@ -142,13 +142,14 @@ header {
   align-content: center;
   justify-content: center;
   text-align: center;
-  background: #dfdddd no-repeat;
+  background: #313131 no-repeat;
   height: 200px;
   @include xs {
     height: 50vh;
   }
   .about-me-content {
     font-size: 1.5rem;
+    color: white;
     @include xs {
       font-size: 1.4rem;
     }
@@ -175,7 +176,7 @@ header {
   flex-direction: column;
   text-align: center;
   color: white;
-  background: var(--text);
+  background: #3e3e3e;
   @include xs {
   }
 
@@ -211,8 +212,9 @@ header {
     button {
       font-size: 2rem;
       width: 5rem;
-      background: var(--background);
+      background: black;
       border: 0;
+      color: white;
       cursor: pointer;
       transition: all 0.2sec;
       &:hover {
@@ -230,5 +232,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
+  background: #000000;
 }
 // footer
