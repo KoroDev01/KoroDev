@@ -38,6 +38,26 @@
 /* Landscape phone to portrait tablet */
 /* Portrait tablet to landscape and desktop */
 /* Large desktop */
+@keyframes bounce {
+  0% {
+    transform: rotate(-45deg);
+  }
+  10% {
+    transform: rotate(-35deg);
+  }
+  70% {
+    transform: rotate(20deg);
+  }
+  80% {
+    transform: rotate(-10deg);
+  }
+  90% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 header {
   background: #000000;
   display: flex;
@@ -129,7 +149,9 @@ header ul li a {
   padding-bottom: 0rem;
   font-family: var(--font-family3);
   font-size: 4rem;
-  color: white;
+  color: rgb(222, 216, 134);
+  display: inline-block;
+  animation: bounce 2s;
 }
 @media (max-width: 480px) {
   .welcome .welcome-content h2 {

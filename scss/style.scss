@@ -3,6 +3,7 @@
 @use "classes" as *;
 @use "reset" as *;
 @use "media_queries" as *;
+@use "animations" as *;
 
 // header
 
@@ -93,7 +94,9 @@ header {
       padding-bottom: 0rem;
       font-family: var(--font-family3);
       font-size: 4rem;
-      color: white;
+      color: rgb(222, 216, 134);
+      display: inline-block;
+      animation: bounce 2s;
       @include xs {
         font-size: 2rem;
       }
