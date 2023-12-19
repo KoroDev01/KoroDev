@@ -2,18 +2,25 @@
 @use "variables" as *;
 @use "classes" as *;
 @use "reset" as *;
+@use "media_queries" as *;
 
 // header
 
 header {
   background: linear-gradient(to right, rgb(17, 6, 6));
   display: flex;
-  flex-direction: row;
+  flex-direction: row wrap;
   height: 100px;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 0 2rem;
   border-bottom: 1px solid;
+  @include xs {
+    padding: 5px;
+    height: 150px;
+    flex-direction: column;
+    text-align: center;
+  }
 
   .logo {
     display: flex;
@@ -22,11 +29,17 @@ header {
       font-family: var(--font-familylogo);
       font-size: 2.5rem;
       padding: 0 0 0 0.5rem;
+      @include xs {
+        font-size: 1rem;
+      }
     }
   }
   img {
     height: 90px;
     border-radius: 200px;
+    @include xs {
+      height: 60px;
+    }
   }
   ul {
     justify-content: end;
@@ -71,6 +84,9 @@ header {
       font-size: 4rem;
       font-family: var(--font-family4);
       color: var(--text);
+      @include xs {
+        font-size: 2.2rem;
+      }
     }
     h2 {
       padding-bottom: 0rem;
@@ -78,6 +94,9 @@ header {
       font-size: 4rem;
       color: var(--text);
       color: var(--text);
+      @include xs {
+        font-size: 2rem;
+      }
     }
 
     button {
@@ -90,15 +109,24 @@ header {
       padding: 1rem;
       cursor: pointer;
       transition: 0.2s;
+      @include xs {
+        font-size: 15px;
+      }
       &:hover {
         opacity: 0.5;
         cursor: pointer;
         font-size: 25px;
+        @include xs {
+          font-size: 18px;
+        }
       }
     }
     .social-icons {
       padding: 2rem;
       text-decoration: none;
+      @include xs {
+        padding: 1rem;
+      }
 
       i {
         padding: 0 2rem 0 2rem;
@@ -116,43 +144,27 @@ header {
   text-align: center;
   background: #dfdddd no-repeat;
   height: 200px;
+  @include xs {
+    height: 50vh;
+  }
   .about-me-content {
     font-size: 1.5rem;
+    @include xs {
+      font-size: 1.4rem;
+    }
   }
 }
 .h22 {
   text-align: center;
   font-size: 2.5rem;
-  padding: 0 0 0 0.5rem;
-  background: var(--background);
-}
-.projets {
-  background: var(--background);
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  align-items: center;
-  border-bottom: 1px solid;
-  height: 80vh;
 
-  .p {
-    height: 700px;
-    width: 400px;
-    background: rgb(255, 255, 255);
-    transition: 0.2s;
-    margin: 0;
-    padding: 0;
-    &:hover {
-      opacity: 0.5;
-      width: 400px;
-      height: 500px;
-    }
-    h2 {
-      font-size: 50px;
-      text-align: center;
-    }
+  background: var(--background);
+  @include xs {
+    font-size: 2rem;
+    padding: 1rem;
   }
 }
+
 .contact {
   display: flex;
   flex-flow: row wrap;
@@ -164,6 +176,8 @@ header {
   text-align: center;
   color: white;
   background: var(--text);
+  @include xs {
+  }
 
   .cc {
     height: 100px;
@@ -173,11 +187,13 @@ header {
     text-align: center;
     display: flex;
     flex-direction: column;
+    @include xs {
+      font-size: 2rem;
+    }
     h2 {
       padding-bottom: 20px;
     }
     input {
-      font-size: 9rem;
       text-align: center;
       justify-content: center;
       text-align: center;
@@ -186,12 +202,33 @@ header {
       padding: 1rem 2rem;
       min-width: 400px;
       line-height: 2rem;
-      font-size: 1rem;
+      font-size: 1.3rem;
+      @include xs {
+        font-size: 1rem;
+        min-width: 1.5rem;
+      }
     }
     button {
       font-size: 2rem;
       width: 5rem;
+      background: var(--background);
+      border: 0;
+      cursor: pointer;
+      transition: all 0.2sec;
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
 }
 // main
+// footer
+footer {
+  height: 100px;
+  text-align: center;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+// footer

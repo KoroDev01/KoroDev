@@ -34,15 +34,27 @@
   text-decoration: none;
 }
 
+/* Landscape phones and down */
+/* Landscape phone to portrait tablet */
+/* Portrait tablet to landscape and desktop */
+/* Large desktop */
 header {
   background: linear-gradient(to right, rgb(17, 6, 6));
   display: flex;
-  flex-direction: row;
+  flex-direction: row wrap;
   height: 100px;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 0 2rem;
   border-bottom: 1px solid;
+}
+@media (max-width: 480px) {
+  header {
+    padding: 5px;
+    height: 150px;
+    flex-direction: column;
+    text-align: center;
+  }
 }
 header .logo {
   display: flex;
@@ -53,9 +65,19 @@ header .logo h1 {
   font-size: 2.5rem;
   padding: 0 0 0 0.5rem;
 }
+@media (max-width: 480px) {
+  header .logo h1 {
+    font-size: 1rem;
+  }
+}
 header img {
   height: 90px;
   border-radius: 200px;
+}
+@media (max-width: 480px) {
+  header img {
+    height: 60px;
+  }
 }
 header ul {
   justify-content: end;
@@ -97,12 +119,22 @@ header ul li a {
   font-family: var(--font-family4);
   color: var(--text);
 }
+@media (max-width: 480px) {
+  .welcome .welcome-content p {
+    font-size: 2.2rem;
+  }
+}
 .welcome .welcome-content h2 {
   padding-bottom: 0rem;
   font-family: var(--font-family3);
   font-size: 4rem;
   color: var(--text);
   color: var(--text);
+}
+@media (max-width: 480px) {
+  .welcome .welcome-content h2 {
+    font-size: 2rem;
+  }
 }
 .welcome .welcome-content button {
   color: white;
@@ -115,14 +147,29 @@ header ul li a {
   cursor: pointer;
   transition: 0.2s;
 }
+@media (max-width: 480px) {
+  .welcome .welcome-content button {
+    font-size: 15px;
+  }
+}
 .welcome .welcome-content button:hover {
   opacity: 0.5;
   cursor: pointer;
   font-size: 25px;
 }
+@media (max-width: 480px) {
+  .welcome .welcome-content button:hover {
+    font-size: 18px;
+  }
+}
 .welcome .welcome-content .social-icons {
   padding: 2rem;
   text-decoration: none;
+}
+@media (max-width: 480px) {
+  .welcome .welcome-content .social-icons {
+    padding: 1rem;
+  }
 }
 .welcome .welcome-content .social-icons i {
   padding: 0 2rem 0 2rem;
@@ -139,42 +186,30 @@ header ul li a {
   background: #dfdddd no-repeat;
   height: 200px;
 }
+@media (max-width: 480px) {
+  .about-me {
+    height: 50vh;
+  }
+}
 .about-me .about-me-content {
   font-size: 1.5rem;
+}
+@media (max-width: 480px) {
+  .about-me .about-me-content {
+    font-size: 1.4rem;
+  }
 }
 
 .h22 {
   text-align: center;
   font-size: 2.5rem;
-  padding: 0 0 0 0.5rem;
   background: var(--background);
 }
-
-.projets {
-  background: var(--background);
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  align-items: center;
-  border-bottom: 1px solid;
-  height: 80vh;
-}
-.projets .p {
-  height: 700px;
-  width: 400px;
-  background: rgb(255, 255, 255);
-  transition: 0.2s;
-  margin: 0;
-  padding: 0;
-}
-.projets .p:hover {
-  opacity: 0.5;
-  width: 400px;
-  height: 500px;
-}
-.projets .p h2 {
-  font-size: 50px;
-  text-align: center;
+@media (max-width: 480px) {
+  .h22 {
+    font-size: 2rem;
+    padding: 1rem;
+  }
 }
 
 .contact {
@@ -198,11 +233,15 @@ header ul li a {
   display: flex;
   flex-direction: column;
 }
+@media (max-width: 480px) {
+  .contact .cc {
+    font-size: 2rem;
+  }
+}
 .contact .cc h2 {
   padding-bottom: 20px;
 }
 .contact .cc input {
-  font-size: 9rem;
   text-align: center;
   justify-content: center;
   text-align: center;
@@ -211,11 +250,33 @@ header ul li a {
   padding: 1rem 2rem;
   min-width: 400px;
   line-height: 2rem;
-  font-size: 1rem;
+  font-size: 1.3rem;
+}
+@media (max-width: 480px) {
+  .contact .cc input {
+    font-size: 1rem;
+    min-width: 1.5rem;
+  }
 }
 .contact .cc button {
   font-size: 2rem;
   width: 5rem;
+  background: var(--background);
+  border: 0;
+  cursor: pointer;
+  transition: all 0.2sec;
+}
+.contact .cc button:hover {
+  opacity: 0.8;
+}
+
+footer {
+  height: 100px;
+  text-align: center;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=style.css.map */
