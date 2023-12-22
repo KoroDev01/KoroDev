@@ -239,40 +239,40 @@ header ul li a {
   }
 }
 
-#portfolio {
-  max-width: 80rem;
-  margin: 20px auto;
+.portfolio {
   text-align: center;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   grid-gap: 20px;
   text-align: center;
+  background: var(--background);
+  color: white;
 }
 @media (max-width: 480px) {
-  #portfolio {
+  .portfolio {
     display: block;
   }
 }
-#portfolio h2 {
+.portfolio h2 {
   grid-column: span 2;
   font-size: 2rem;
 }
-#portfolio .site {
+.portfolio .site {
   margin-bottom: 30px;
 }
-#portfolio .site img {
+.portfolio .site img {
   width: 100%;
   height: auto;
   border: 1px solid #ddd;
 }
-#portfolio .site .site-info {
+.portfolio .site .site-info {
   padding: 10px;
 }
-#portfolio .site .site-info h3 {
+.portfolio .site .site-info h3 {
   margin-top: 0;
 }
-#portfolio .site .site-info a {
+.portfolio .site .site-info a {
   display: inline-block;
   margin-top: 10px;
   padding: 8px 16px;
