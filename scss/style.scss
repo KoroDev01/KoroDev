@@ -90,6 +90,9 @@ header {
       font-size: 4rem;
       font-family: var(--font-family4);
       color: white;
+      @include md {
+        font-size: 3rem;
+      }
       @include xs {
         font-size: 2.2rem;
       }
@@ -101,6 +104,9 @@ header {
       color: rgb(222, 216, 134);
       display: inline-block;
       animation: bounce 2s;
+      @include md {
+        font-size: 3;
+      }
       @include xs {
         font-size: 2rem;
       }
@@ -151,26 +157,19 @@ header {
   text-align: center;
   background: #313131 no-repeat;
   height: 35vh;
+  @include md {
+    height: 100%;
+  }
   @include xs {
-    height: 50vh;
+    height: 100%;
   }
   .about-me-content {
     font-size: 1.5rem;
     color: white;
+
     @include xs {
       font-size: 1.4rem;
     }
-  }
-}
-.h22 {
-  text-align: center;
-  font-size: 2.5rem;
-  border-bottom: 1px solid white;
-
-  background: var(--background);
-  @include xs {
-    font-size: 2rem;
-    padding: 1rem;
   }
 }
 
@@ -183,6 +182,7 @@ header {
   text-align: center;
   background: var(--background);
   color: white;
+
   @include xs {
     display: block;
   }
@@ -231,6 +231,9 @@ header {
   text-align: center;
   color: white;
   background: #3e3e3e;
+  @include md {
+    height: 60vh;
+  }
   @include xs {
   }
 
