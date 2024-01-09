@@ -39,135 +39,76 @@
     <title>KoroDev</title>
   </head>
   <body>
-    <!-- header section  -->
-    <header>
-      <div class="logo">
-        <a href="/index.html"><img src="/img/pp.jpg" alt="logo" /></a>
-        <h1>KoroDev</h1>
-      </div>
+    <div class="grid-container">
+      <header>
+        <div class="logo">
+          <a href="/index.html"><img src="/img/pp.jpg" alt="logo" /></a>
+        </div>
 
-      <div>
-        <ul>
-          <li><a href="#abm">About me</a></li>
-          <li><a href="#portfolio">Projects websites</a></li>
-          <li><a href="#contact">Cantact me</a></li>
-        </ul>
-      </div>
-    </header>
-    <!-- ..................  -->
-
-    <main>
-      <div class="welcome">
-        <div class="welcome-content">
-          <div>
-            <p>Welcome</p>
-            <h2>On koro's site!</h2>
-            <p>Web developper searching the one piece haha</p>
-            <button><a href="#abm">Know more about me</a></button>
-          </div>
-
-          <div class="social-icons">
+        <div class="sections">
+          <ul>
+            <li>
+              <a href="#abm"><i class="fa-solid fa-house"></i>Home</a>
+            </li>
+            <div class="sep"></div>
+            <li>
+              <a href="#portfolio"
+                ><i class="fa-solid fa-briefcase"></i>Features</a
+              >
+            </li>
+            <div class="sep"></div>
+            <li>
+              <a href="#contact"
+                ><i class="fa-solid fa-bars-progress"></i>Skills</a
+              >
+            </li>
+            <div class="sep"></div>
+            <li>
+              <a href="#contact"
+                ><i class="fa-solid fa-layer-group"></i>Projects</a
+              >
+            </li>
+            <div class="sep"></div>
+          </ul>
+        </div>
+        <div class="social">
+          <h2>Find me on</h2>
+          <div class="social-container">
             <a href="https://www.tiktok.com/@koro_pubgm1"
-              ><i class="fa-brands fa-tiktok fa-beat"></i
+              ><i class="fa-brands fa-tiktok"></i
             ></a>
+
             <a href="https://www.instagram.com/__bankaiiii__/">
-              <i class="fa-brands fa-instagram fa-beat"></i
+              <i class="fa-brands fa-instagram"></i
             ></a>
             <a href="https://discord.gg/HwpxHyXvqh">
-              <i class="fa-brands fa-discord fa-beat"></i
+              <i class="fa-brands fa-discord"></i
             ></a>
           </div>
         </div>
-      </div>
-      <div class="about-me" id="abm">
-        <div class="about-me-content">
-          <h2>About me</h2>
-          <p>
-            Hi everyone, I'm Mali Faiz, passionate about computers and
-            everything related to it. <br />
-            <br />
-            You'll often find me immersed in the captivating world of anime,
-            exploring new games on my computer, or immersed in the fascinating
-            art of coding.
-            <br />
-            <br />
-            As a technology enthusiast, I love exploring the endless
-            possibilities that the digital world offers.
-            <br />
-            <br />
-            Join me on this adventure where we can together discover, learn and
-            share our passion for computing.
+      </header>
 
-            <br />
-            <br />
-            Welcome to my virtual world!
-          </p>
-        </div>
-      </div>
+      <!-- ..................  -->
 
-      <section class="portfolio" id="portfolio">
-        <h2 class="gallery-title">Projects websites</h2>
+      <!-- main -->
+      <main>
+        <div class="home">
+          <canvas id="flyingPointsCanvas"></canvas>
 
-        <div class="site">
-          <img src="/img/site11.png" alt="Capture d'écran du Site 1" />
-          <div class="site-info">
-            <h3>Le journal du lundi</h3>
-            <p>Example site d'un journal, blog etc...</p>
-            <a href="/sites/journal/index.html" target="_blank">Voir le Site</a>
+          <div class="text-container">
+            <h1>Koro Dev</h1>
+            <h2>I will be <span id="changingText"></span></h2>
           </div>
+          <script src="script.js"></script>
         </div>
-
-        <div class="site">
-          <img src="/img/site2.png" alt="Capture d'écran du Site 2" />
-          <div class="site-info">
-            <h3>Cv</h3>
-            <p>Example site curriculum vitae</p>
-            <a href="/sites/cv/index.html" target="_blank">Voir le Site</a>
-          </div>
+        <div class="features">
+          <h1>hi</h1>
         </div>
-        <div class="site">
-          <img src="/img/site31.png" alt="Capture d'écran du Site 3" />
-          <div class="site-info">
-            <h3>Ledor</h3>
-            <p>Example site d'agence, entreprise etc...</p>
-            <a href="/sites/ledor/index.html" target="_blank">Voir le Site</a>
-          </div>
-        </div>
-        <div class="site">
-          <img src="/img/s41.png" alt="Capture d'écran du Site 2" />
-          <div class="site-info">
-            <h3>Café florette</h3>
-            <p>
-              Example site pour votre cafétéria, restaurant, boulangerie etc...
-            </p>
-            <a href="/sites/florette/index.html" target="_blank"
-              >Voir le Site</a
-            >
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <div class="contact">
-      <div class="cc">
-        <div><h2 id="contact">Contact form</h2></div>
-        <form name="contact" method="POST" data-netlify="true">
-          <div>
-            <input
-              type="text"
-              name="email"
-              placeholder="Put your email for to contact you"
-            />
-
-            <div><button type="submit">Send</button></div>
-          </div>
-        </form>
-      </div>
+        <div class="skills"></div>
+        <div class="projects"></div>
+      </main>
+      <!-- ..................  -->
     </div>
-    <footer>
-      <div class="ftr">
-        <p>Copyright © 2023 KoroDev, Inc.</p>
-      </div>
-    </footer>
+    <!-- header section  -->
   </body>
 </html>
