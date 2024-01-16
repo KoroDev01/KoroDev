@@ -66,8 +66,8 @@
 }
 .container {
   display: flex;
-  flex-direction: row;
-  height: 100vh;
+  flex-direction: column;
+  height: 100%;
   width: 100%;
 }
 .container header {
@@ -177,30 +177,21 @@
   transform: translate(10%, 0%);
 }
 .container .mainn .features {
-  height: 30vh;
+  height: 100%;
   width: 100%;
   background-color: var(--gris);
   text-align: center;
   font-family: var(--font-family4);
 }
-.container .mainn .features .features-sec {
-  color: var(--rose);
-  font-size: 20px;
-  margin-top: 20px;
-  margin-bottom: 40px;
-}
-.container .mainn .features h2 {
-  font-size: 40px;
-  margin-bottom: 40px;
-  color: var(--text);
-}
 .container .mainn .features .features-content {
   background-color: var(--gris);
   height: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   border-bottom: var(--grisclair) 2px solid;
+  padding-bottom: 40px;
 }
 .container .mainn .features .features-content .item {
   background-color: var(--grisclair);
@@ -226,29 +217,86 @@
   margin-bottom: 2rem;
   margin-top: 2rem;
 }
+.container .mainn .features .features-sec {
+  color: var(--rose);
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.container .mainn .features h3 {
+  font-size: 40px;
+  margin-bottom: 40px;
+  color: var(--text);
+}
 .container .mainn .skills {
-  background-color: var(--gris);
-  height: 100vh;
-  padding-top: 20px;
+  padding-top: 10px;
+  height: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  background-color: var(--gris);
   align-items: center;
 }
 .container .mainn .skills .skills-nav {
+  background: linear-gradient(to bottom right, #333533, #2a2a29);
   height: 100px;
   width: 90%;
+  border: var(--gris) 2px solid;
   border-radius: 20px;
-  display: flex;
-  margin-left: 10px;
-  border: var(--grisclair) 2px solid;
+  box-shadow: 0px 4px 8px #353535;
+  padding: 1px;
+  position: relative;
 }
 .container .mainn .skills .skills-nav nav {
-  padding-left: 20px;
-  padding-right: 20px;
-  box-shadow: 0 1px 1px #000000;
-  height: 100px;
-  border: var(--grisclair) 2px solid;
+  width: 200px;
+  height: 95px;
+  display: flex;
   border-radius: 20px;
+  align-items: center;
+  border: var(--gris) 1px solid;
+  box-shadow: 0 0 10px 1px rgb(230, 221, 221);
+}
+.container .mainn .skills .skills-nav nav h2 {
+  color: #f5f5f5;
+}
+.container .mainn .skills .bars {
+  background: var(--gris);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  color: #f5f5f5;
+}
+.container .mainn .skills .bars .html,
+.container .mainn .skills .bars .scss {
+  padding-top: 60px;
+  width: 40%;
+}
+.container .mainn .skills .bars .html .bar-skill,
+.container .mainn .skills .bars .scss .bar-skill {
+  margin: 2rem 0;
+  height: 5px;
+  background: var(--hint);
+  position: relative;
+}
+.container .mainn .skills .bars .html .bar-skill .bar-skill-progress,
+.container .mainn .skills .bars .scss .bar-skill .bar-skill-progress {
+  position: absolute;
+  height: 5px;
+  top: 0;
+  left: 0;
+  width: 80%;
+  background: var(--rose);
+}
+.container .mainn .skills .bars .html .bar-skill .bar-skill-dot,
+.container .mainn .skills .bars .scss .bar-skill .bar-skill-dot {
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  background: white;
+  left: calc(80% - 5px);
+  top: -2.5px;
+  transform: rotate(45deg);
 }
 
 /*# sourceMappingURL=style.css.map */
