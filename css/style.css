@@ -21,11 +21,13 @@
   --font-family3: "Press Start 2P", sans-serif;
   --font-family4: "Dhurjati", sans-serif;
   --font-family5: "Lobster", sans-serif;
-  --light: #00c3ff;
-  --primary: #2071e7;
-  --lighter: rgb(44, 164, 216);
-  --text: #adadad;
-  --background: #474646;
+  --gris: #333533;
+  --grisclair:#2A2A29;
+  --beige:#FEFAE0;
+  --rouge:#D10000;
+  --rose:#ff014f;
+  --backgoundaside2:#919098;
+  --text: #ffffff;
   --hint: #999;
   --border: #ddd;
 }
@@ -35,18 +37,17 @@
   padding: 0;
   box-sizing: border-box;
 }
+* body {
+  overflow-x: hidden;
+}
+* canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 * a {
   text-decoration: none;
   color: white;
-}
-
-body {
-  margin: 0;
-  overflow: hidden;
-}
-
-canvas {
-  display: block;
 }
 
 /* Landscape phones and down */
@@ -63,47 +64,44 @@ canvas {
     color: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #fff, 0 0 80px #fff, 0 0 100px #fff, 0 0 120px #fff, 0 0 140px #fff;
   }
 }
-.grid-container {
-  display: grid;
-  grid-template-columns: 30vh auto;
-  grid-template-rows: 1fr;
-  grid-template-areas: "header main";
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100%;
 }
-.grid-container header {
-  grid-area: header;
-  background: rgb(51, 50, 50);
+.container header {
+  background: var(--gris);
   height: 100%;
-  width: 30vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 15vw;
+  border-right: black solid 3px;
+  z-index: 1;
 }
-.grid-container header .logo {
-  display: flex;
+.container header .logo {
   margin-bottom: 50px;
-  justify-content: space-around;
+  text-align: center;
 }
-.grid-container header .logo a img {
+.container header .logo a img {
   margin-top: 50px;
   height: 10rem;
   border-radius: 500px;
 }
-.grid-container header .sections {
-  display: flex;
-  flex-direction: column;
-  align-self: center;
+.container header .sections {
   text-align: center;
   font-size: 1.9rem;
   font-family: var(--font-family4);
   color: white;
   padding-bottom: 10rem;
 }
-.grid-container header .sections ul li {
+.container header .sections ul li {
   padding-bottom: 20px;
   list-style: none;
   transition: font-size 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
 }
-.grid-container header .sections ul li:hover {
+.container header .sections ul li:hover {
   font-size: 2.5rem;
   color: #fff;
   text-align: center;
@@ -111,33 +109,31 @@ canvas {
   letter-spacing: 4px;
   text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ffffff, 0 0 70px #fefdfe, 0 0 80px #fbf7fb, 0 0 100px #fffeff;
 }
-.grid-container header .sections ul li a i {
+.container header .sections ul li a i {
   padding-right: 0.5rem;
 }
-.grid-container header .social {
-  display: flex;
-  flex-direction: column;
+.container header .social {
   font-size: 2rem;
   width: 100%;
 }
-.grid-container header .social h2 {
+.container header .social h2 {
   color: white;
   font-family: var(--font-family4);
   font-size: 2.1rem;
   text-align: center;
 }
-.grid-container header .social .social-container {
+.container header .social .social-container {
   display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap;
   justify-content: space-around;
   width: 100%;
 }
-.grid-container header .social .social-container a i {
+.container header .social .social-container a i {
   width: 100%;
   display: flex;
-  transition: font-size 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+  transition: font-size 0.1s ease-in-out, text-shadow 0.1s ease-in-out;
 }
-.grid-container header .social .social-container a i:hover {
+.container header .social .social-container a i:hover {
   font-size: 2.5rem;
   color: #fff;
   text-align: center;
@@ -145,34 +141,76 @@ canvas {
   letter-spacing: 4px;
   text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ffffff, 0 0 70px #fefdfe, 0 0 80px #fbf7fb, 0 0 100px #fffeff;
 }
-.grid-container main {
-  grid-area: main;
+.container .mainn {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 15vw;
+}
+.container .mainn .home {
+  background: url(/img/background.avif) center/cover fixed;
+  height: 100vh;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .mainn .home h2 {
+  font-size: 80px;
+  color: white;
+}
+.container .mainn .home #text-container {
+  font-family: monospace;
+  font-size: 40px;
+  color: #ff014f;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #f5f5f5;
+}
+.container .mainn .home p {
+  color: white;
+  font-weight: 500;
+  font-size: 40px;
+  transform: translate(10%, 0%);
+}
+.container .mainn .features {
+  height: 50vh;
+  width: 100%;
+  background-color: var(--gris);
+  text-align: center;
+}
+.container .mainn .features p {
+  color: var(--rose);
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.container .mainn .features h2 {
+  margin-bottom: 40px;
+}
+.container .mainn .features .features-content {
+  background-color: var(--gris);
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.grid-container main .home {
-  background: url(/img/background.avif) center/cover;
+.container .mainn .features .features-content .item {
+  margin-top: 50px;
+  background-color: var(--grisclair);
+  box-shadow: #241d1f;
+  height: 80%;
+  width: 30%;
   display: flex;
-  flex-flow: column wrap;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
 }
-.grid-container main .home .text-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.container .mainn .features .features-content .item h2 {
+  text-align: center;
 }
-.grid-container main .home .text-container h1 {
-  margin: 0;
-  font-size: 5em; /* Ajustez selon vos besoins */
-  color: white;
-}
-.grid-container main .home .text-container h2 {
-  margin: 0;
-  font-size: 3.5rem; /* Ajustez selon vos besoins */
-  color: white;
+.container .mainn .features .features-content .item p {
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

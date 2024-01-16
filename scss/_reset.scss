@@ -2,16 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  body {
+    overflow-x: hidden;
+  }
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
   a {
     text-decoration: none;
     color: white;
   }
-}
-body {
-  margin: 0;
-  overflow: hidden;
-}
-
-canvas {
-  display: block;
 }

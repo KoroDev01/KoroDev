@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "bash": "^0.0.1",
     "sass": "^1.69.5"
   }
 }

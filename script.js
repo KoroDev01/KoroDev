@@ -1,112 +1,89 @@
-const canvas = document.getElementById("flyingPointsCanvas");
-const ctx = canvas.getContext("2d");
+var texts = ["THE BEST DEVELOPER", "A PROFESSIONAL CODER"];
+var counter = 0;
+var index = 0;
+var textContainer = document.getElementById("text-container");
 
-function adjustCanvasSize() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+function typeText() {
+ var currentText = texts[counter];
+ textContainer.textContent = currentText.substring(0, index);
+ index++;
+
+ if (index > currentText.length) {
+ clearInterval(intervalId); // Stop the current animation
+ setTimeout(function() { // Wait for a certain period before starting to type the next text
+  counter = (counter + 1) % texts.length; // Move to the next text in the array
+  index = 0; // Reset the index for the new text
+  intervalId = setInterval(typeText, 100); // Start typing the new text
+ }, 300); // Wait 300ms before starting to type the next text
+ }
 }
 
-adjustCanvasSize();
+var intervalId = setInterval(typeText, 100); // Start typing the first text
 
-const points = [];
 
-function Point(x, y, radius, color) {
-  this.x = x;
-  this.y = y;
-  this.radius = radius;
-  this.color = color;
 
-  this.draw = function () {
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-    ctx.fillStyle = this.color;
-    ctx.fill();
-  };
 
-  this.update = function () {
-    this.draw();
-    this.x += 1; // Adjust the speed of points along the x-axis
-    this.y += Math.random() * 2 - 1; // Randomize the movement along the y-axis
 
-    // Reset the points when they go beyond the canvas
-    if (this.x > canvas.width + this.radius) {
-      this.x = -this.radius;
-    }
-    if (this.y > canvas.height + this.radius) {
-      this.y = Math.random() * canvas.height;
-    }
-    if (this.y < -this.radius) {
-      this.y = Math.random() * canvas.height;
-    }
-  };
-}
 
-function createPoints() {
-  const numberOfPoints = Math.floor((canvas.width * canvas.height) / 10000); // Adjust based on canvas size
-  for (let i = 0; i < numberOfPoints; i++) {
-    const x = Math.random() * canvas.width;
-    const y = Math.random() * canvas.height;
-    const radius = Math.random() * 3;
-    const color = "rgba(255, 255, 255, 0.5)";
 
-    points.push(new Point(x, y, radius, color));
+class FlyingPointsCanvas {
+  constructor(speed, numPoints, pointSize, opacity) {
+    this.canvas = document.createElement('canvas');
+    document.body.appendChild(this.canvas);
+    this.ctx = this.canvas.getContext('2d');
+    this.flyingPoints = [];
+
+    this.speed = speed || 1;        // Vitesse des points (ajustez selon vos besoins)
+    this.numPoints = numPoints || 50;  // Nombre de points
+    this.pointSize = pointSize || 3;   // Taille des points
+    this.opacity = opacity || 0.5;     // Opacité des points (de 0 à 1)
+
+    this.initializeCanvas();
+    this.createFlyingPoints();
+    this.animate();
   }
-}
 
-function animate() {
-  requestAnimationFrame(animate);
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  initializeCanvas() {
+    this.canvas.width = window.innerWidth;
+    this.canvas.height = window.innerHeight;
 
-  for (const point of points) {
-    point.update();
+    window.addEventListener('resize', () => {
+      this.canvas.width = window.innerWidth;
+      this.canvas.height = window.innerHeight;
+      this.createFlyingPoints(); // Réinitialiser les points lors du redimensionnement
+    });
   }
-}
 
-createPoints();
-animate();
-
-// Adjust canvas size when the window is resized
-window.addEventListener("resize", () => {
-  adjustCanvasSize();
-  points.length = 0; // Clear existing points
-  createPoints(); // Recreate points when the canvas size changes
-});
-
-// script.js
-document.addEventListener("DOMContentLoaded", function () {
-  const changingText = document.getElementById("changingText");
-  const newText = "THE BEST DEVELOPER";
-  const pinkColor = "#ff014f";
-
-  function typeText(index) {
-    changingText.textContent = newText.slice(0, index);
-    changingText.style.color = pinkColor; // Change color to pink during typing
-    changingText.style.fontSize = "4rem"; // Set text size to 4rem
-    if (index < newText.length) {
-      setTimeout(() => {
-        typeText(index + 1);
-      }, 100); // Adjust the speed of typing
-    } else {
-      setTimeout(() => {
-        eraseText(newText.length);
-      }, 2000); // Wait for 2 seconds before erasing
+  createFlyingPoints() {
+    this.flyingPoints = [];
+    for (let i = 0; i < this.numPoints; i++) {
+      const x = Math.random() * this.canvas.width;
+      const y = Math.random() * this.canvas.height;
+      const size = Math.random() * this.pointSize + 1;
+      const speed = (Math.random() - 0.5) * 2 * this.speed;
+      this.flyingPoints.push({ x, y, size, speed });
     }
   }
 
-  function eraseText(index) {
-    changingText.textContent = newText.slice(0, index);
-    changingText.style.color = pinkColor; // Change color to pink during erasing
-    changingText.style.fontSize = "4rem"; // Set text size to 4rem
-    if (index > 0) {
-      setTimeout(() => {
-        eraseText(index - 1);
-      }, 50); // Adjust the speed of erasing
-    } else {
-      setTimeout(() => {
-        typeText(0);
-      }, 2000); // Wait for 2 seconds before typing again
-    }
-  }
+  animate() {
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-  typeText(0); // Start typing initially
-});
+    for (const point of this.flyingPoints) {
+      point.x += point.speed;
+      if (point.x > this.canvas.width + point.size) {
+        point.x = 0 - point.size;
+        point.y = Math.random() * this.canvas.height;
+      }
+
+      this.ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+      this.ctx.beginPath();
+      this.ctx.arc(point.x, point.y, point.size, 0, Math.PI * 2);
+      this.ctx.fill();
+    }
+
+    requestAnimationFrame(() => this.animate());
+  }
+}
+
+// Instancier la classe FlyingPointsCanvas avec des paramètres personnalisés
+const flyingPointsCanvas = new FlyingPointsCanvas(0.5, 75, 5, 0.3);

@@ -7,25 +7,25 @@
 
 // header
 
-// header
-.grid-container {
-  display: grid;
-  grid-template-columns: 30vh auto;
-  grid-template-rows: 1fr;
-  grid-template-areas: "header main";
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100%;
 
   header {
-    grid-area: header;
-    background: rgb(51, 50, 50);
+    background: var(--gris);
     height: 100%;
-    width: 30vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 15vw;
+    border-right: black solid 3px;
+    z-index: 1;
+
     .logo {
-      display: flex;
       margin-bottom: 50px;
-      justify-content: space-around;
+      text-align: center;
       a {
         img {
           margin-top: 50px;
@@ -35,9 +35,6 @@
       }
     }
     .sections {
-      display: flex;
-      flex-direction: column;
-      align-self: center;
       text-align: center;
       font-size: 1.9rem;
       font-family: var(--font-family4);
@@ -68,8 +65,6 @@
       }
     }
     .social {
-      display: flex;
-      flex-direction: column;
       font-size: 2rem;
       width: 100%;
       h2 {
@@ -80,17 +75,16 @@
       }
       .social-container {
         display: flex;
-        flex-direction: row;
+        flex-flow: row nowrap;
         justify-content: space-around;
         width: 100%;
         a {
           i {
             width: 100%;
             display: flex;
-            transition: font-size 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+            transition: font-size 0.1s ease-in-out, text-shadow 0.1s ease-in-out;
             &:hover {
               font-size: 2.5rem;
-
               color: #fff;
               text-align: center;
               text-transform: uppercase;
@@ -106,36 +100,79 @@
   }
   // .....................
   // home
-  main {
-    grid-area: main;
+  .mainn {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 15vw;
 
     .home {
-      background: url(/img/background.avif) center/cover;
+      background: url(/img/background.avif) center/cover fixed;
+
+      height: 100vh;
+      min-height: 100vh;
+      width: 100%;
       display: flex;
-      flex-flow: column wrap;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
-      .text-container {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        h1 {
-          margin: 0;
-          font-size: 5em; /* Ajustez selon vos besoins */
-          color: white;
-        }
-        h2 {
-          margin: 0;
-          font-size: 3.5rem; /* Ajustez selon vos besoins */
-          color: white;
-        }
+      align-items: center;
+
+      h2 {
+        font-size: 80px;
+        color: white;
+      }
+      #text-container {
+        font-family: monospace;
+        font-size: 40px;
+        color: #ff014f;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 2px solid #f5f5f5;
       }
 
-      // .....................
+      p {
+        color: white;
+        font-weight: 500;
+        font-size: 40px;
+        transform: translate(10%, 0%);
+      }
+    }
+    .features {
+      height: 50vh;
+      width: 100%;
+      background-color: var(--gris);
+      text-align: center;
+      p {
+        color: var(--rose);
+        margin-top: 20px;
+        margin-bottom: 40px;
+      }
+      h2 {
+        margin-bottom: 40px;
+      }
+      .features-content {
+        background-color: var(--gris);
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .item {
+          margin-top: 50px;
+          background-color: var(--grisclair);
+          box-shadow: #241d1f;
+          height: 80%;
+          width: 30%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          h2 {
+            text-align: center;
+          }
+          p {
+            text-align: center;
+          }
+        }
+      }
     }
   }
 }
