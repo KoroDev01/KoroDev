@@ -15,6 +15,19 @@
   width: 100%;
 }
 
+.little-titles {
+  color: var(--rose);
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.big-titles {
+  font-size: 40px;
+  margin-bottom: 40px;
+  color: var(--text);
+}
+
 :root {
   --font-familylogo: "Rubik Doodle Shadow", "sans-serif";
   --font-family2: "Lobster", sans-serif;
@@ -217,30 +230,20 @@
   margin-bottom: 2rem;
   margin-top: 2rem;
 }
-.container .mainn .features .features-sec {
-  color: var(--rose);
-  font-size: 20px;
-  margin-top: 20px;
-  margin-bottom: 40px;
-}
-.container .mainn .features h3 {
-  font-size: 40px;
-  margin-bottom: 40px;
-  color: var(--text);
-}
 .container .mainn .skills {
-  padding-top: 10px;
   height: 50%;
   width: 100%;
   display: flex;
   flex-direction: column;
   background-color: var(--gris);
   align-items: center;
+  padding: 10px 150px;
+  border-bottom: var(--grisclair) 2px solid;
 }
 .container .mainn .skills .skills-nav {
   background: linear-gradient(to bottom right, #333533, #2a2a29);
   height: 100px;
-  width: 90%;
+  width: 100%;
   border: var(--gris) 2px solid;
   border-radius: 20px;
   box-shadow: 0px 4px 8px #353535;
@@ -264,39 +267,161 @@
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-between;
   color: #f5f5f5;
 }
-.container .mainn .skills .bars .html,
-.container .mainn .skills .bars .scss {
+.container .mainn .skills .bars .html {
   padding-top: 60px;
   width: 40%;
 }
-.container .mainn .skills .bars .html .bar-skill,
+.container .mainn .skills .bars .html .bar-skill {
+  margin: 2rem 0;
+  height: 5px;
+  background: var(--hint);
+  position: relative;
+}
+.container .mainn .skills .bars .html .bar-skill .bar-skill-progress {
+  position: absolute;
+  height: 5px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--rose);
+}
+.container .mainn .skills .bars .html .bar-skill .bar-skill-dot {
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  background: white;
+  left: calc(100% - 5px);
+  top: -2.5px;
+  transform: rotate(45deg);
+}
+.container .mainn .skills .bars .html .bar-skill .bar-skill-percentage {
+  position: absolute;
+  top: 20px;
+  left: calc(100% - 5px);
+  transform: translate(0, -50%);
+  color: white;
+  font-size: 20px;
+}
+.container .mainn .skills .bars .scss {
+  padding-top: 60px;
+  width: 50%;
+}
 .container .mainn .skills .bars .scss .bar-skill {
   margin: 2rem 0;
   height: 5px;
   background: var(--hint);
   position: relative;
 }
-.container .mainn .skills .bars .html .bar-skill .bar-skill-progress,
 .container .mainn .skills .bars .scss .bar-skill .bar-skill-progress {
   position: absolute;
   height: 5px;
   top: 0;
   left: 0;
-  width: 80%;
+  width: 90%;
   background: var(--rose);
 }
-.container .mainn .skills .bars .html .bar-skill .bar-skill-dot,
 .container .mainn .skills .bars .scss .bar-skill .bar-skill-dot {
   position: absolute;
   height: 10px;
   width: 10px;
   background: white;
-  left: calc(80% - 5px);
+  left: calc(90% - 5px);
   top: -2.5px;
   transform: rotate(45deg);
+}
+.container .mainn .skills .bars .scss .bar-skill .bar-skill-percentage {
+  position: absolute;
+  top: 20px;
+  left: calc(90% - 5px);
+  transform: translate(0, -50%);
+  color: white;
+  font-size: 20px;
+}
+.container .mainn .skills .bars .js {
+  width: 40%;
+}
+.container .mainn .skills .bars .js .bar-skill {
+  margin: 2rem 0;
+  height: 5px;
+  background: var(--hint);
+  position: relative;
+}
+.container .mainn .skills .bars .js .bar-skill .bar-skill-progress {
+  position: absolute;
+  height: 5px;
+  top: 0;
+  left: 0;
+  width: 15%;
+  background: var(--rose);
+}
+.container .mainn .skills .bars .js .bar-skill .bar-skill-dot {
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  background: white;
+  left: calc(15% - 5px);
+  top: -2.5px;
+  transform: rotate(45deg);
+}
+.container .mainn .skills .bars .js .bar-skill .bar-skill-percentage {
+  position: absolute;
+  top: 20px;
+  left: calc(15% - 5px);
+  transform: translate(0, -50%);
+  color: white;
+  font-size: 20px;
+}
+.container .mainn .projects {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--gris);
+  align-items: center;
+}
+.container .mainn .projects .projects-content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.container .mainn .projects .projects-content .site {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 100px;
+  height: 100%;
+  width: 100%;
+  color: #f5f5f5;
+}
+.container .mainn .projects .projects-content .site .site1 {
+  width: 50%;
+  height: 50%;
+  background-color: var(--grisclair);
+  box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.2s;
+  margin-bottom: 50px;
+}
+.container .mainn .projects .projects-content .site .site1 img {
+  width: 99%;
+  height: 50%;
+}
+.container .mainn .projects .projects-content .site .site1 h2 {
+  margin-top: 10px;
+}
+.container .mainn .projects .projects-content .site .site1 button {
+  height: 40px;
+  width: 100px;
+  margin: 10px 0;
+  color: white;
+  background: linear-gradient(to right, #333533, #2a2a29);
 }
 
 /*# sourceMappingURL=style.css.map */
