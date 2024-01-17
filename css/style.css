@@ -51,7 +51,8 @@
   box-sizing: border-box;
 }
 * body {
-  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
 }
 * canvas {
   position: absolute;
@@ -228,7 +229,7 @@
 }
 @media (max-width: 580px) {
   .container .mainn .home h2 {
-    font-size: 80px;
+    font-size: 50px;
   }
 }
 .container .mainn .home #text-container {
@@ -241,7 +242,7 @@
 }
 @media (max-width: 1280px) {
   .container .mainn .home #text-container {
-    font-size: 20px;
+    font-size: 10px;
   }
 }
 .container .mainn .home p {
