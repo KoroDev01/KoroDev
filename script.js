@@ -1,3 +1,16 @@
+const menu = document.getElementById('menu-icon');
+const header = document.querySelector('header');
+
+menu.onclick = () => {
+  menu.classList.toggle('bx-x');
+  header.classList.toggle('open');
+}
+
+
+
+
+
+
 var texts = ["THE BEST DEVELOPER", "A PROFESSIONAL CODER"];
 var counter = 0;
 var index = 0;
@@ -88,3 +101,5 @@ class FlyingPointsCanvas {
 
 // Instanciate the FlyingPointsCanvas class with custom parameters
 const flyingPointsCanvas = new FlyingPointsCanvas('#home', 0.5, 75, 5, 0.3);
+
+

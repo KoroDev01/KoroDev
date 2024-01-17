@@ -12,7 +12,19 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
+  .header.open {
+    display: flex;
+    position: fixed;
+    top: 50px;
+    right: 0;
+    width: 300px;
+    height: 40vh;
 
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 20px;
+    transition: all 0.55s ease;
+  }
   header {
     background: var(--gris);
     height: 100%;
@@ -22,7 +34,10 @@
     width: 15vw;
     border-right: black solid 3px;
     z-index: 1;
-    @include xs {
+    .header.open {
+      /* Les styles pour le header ouvert vont ici */
+    }
+    @include md {
       display: none;
     }
     .logo {
@@ -105,10 +120,14 @@
   .mainn {
     display: flex;
     flex-direction: column;
-    // flex: 1fr;
+
     width: 100%;
     padding-left: 15vw;
-    @include xs {
+    @include md {
+      padding-left: 0;
+    }
+
+    @include md {
       padding-left: 0;
     }
     .home {
@@ -121,8 +140,21 @@
       justify-content: center;
       align-items: center;
       border-bottom: var(--grisclair) 2px solid;
-      @include xs {
+      #menu-icon {
+        color: white;
+        font-size: 50px;
+        cursor: pointer;
+        position: fixed;
+        top: 0;
+        right: 00px;
+        z-index: 10001;
+        @include xl {
+          display: none;
+        }
+      }
+      @include md {
         height: 70vh;
+        width: 100%;
         min-height: 50vh;
       }
       h2 {
@@ -139,7 +171,7 @@
         white-space: nowrap;
         overflow: hidden;
         border-right: 2px solid #f5f5f5;
-        @include xs {
+        @include md {
           font-size: 20px;
         }
       }
@@ -149,7 +181,7 @@
         font-weight: 500;
         font-size: 40px;
         transform: translate(10%, 0%);
-        @include xs {
+        @include md {
           font-size: 30px;
         }
       }
@@ -212,7 +244,7 @@
       align-items: center;
       padding: 10px 150px;
       border-bottom: var(--grisclair) 2px solid;
-      @include xs {
+      @include md {
         padding: 10px;
       }
       .skills-nav {
@@ -223,7 +255,7 @@
         border-radius: 20px;
         box-shadow: 0px 4px 8px #353535;
         padding: 1px;
-        @include xs {
+        @include md {
           display: flex;
           justify-content: center;
         }
@@ -250,13 +282,13 @@
         flex-wrap: wrap;
         justify-content: space-between;
         color: #f5f5f5;
-        @include xs {
+        @include md {
           justify-content: center;
         }
         .html {
           padding-top: 60px;
           width: 40%;
-          @include xs {
+          @include md {
             width: 70%;
           }
           .bar-skill {
@@ -295,7 +327,7 @@
         }
         .scss {
           width: 50%;
-          @include xs {
+          @include md {
             width: 70%;
           }
           .bar-skill {
@@ -333,7 +365,7 @@
         }
         .js {
           width: 40%;
-          @include xs {
+          @include md {
             width: 70%;
           }
           .bar-skill {
@@ -404,7 +436,7 @@
             text-align: center;
             transition: 0.2s;
             margin-bottom: 50px;
-            @include xs {
+            @include md {
               width: 100%;
             }
             img {
