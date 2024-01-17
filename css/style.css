@@ -529,7 +529,8 @@
   width: 100px;
   margin: 10px 0;
   color: white;
-  background: linear-gradient(to right, #333533, #2a2a29);
+  background: linear-gradient(to right, #8e8f8e, #0d0d0d);
+  border-radius: 10px;
 }
 .container .mainn .projects .projects-content .site .site1 button a {
   width: 100%;
