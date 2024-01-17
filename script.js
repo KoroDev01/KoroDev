@@ -27,16 +27,17 @@ var intervalId = setInterval(typeText, 100); // Start typing the first text
 
 
 class FlyingPointsCanvas {
-  constructor(speed, numPoints, pointSize, opacity) {
+  constructor(parentSelector, speed, numPoints, pointSize, opacity) {
     this.canvas = document.createElement('canvas');
-    document.body.appendChild(this.canvas);
+    this.parent = document.querySelector(parentSelector);
+    this.parent.appendChild(this.canvas);
     this.ctx = this.canvas.getContext('2d');
     this.flyingPoints = [];
 
-    this.speed = speed || 1;        // Vitesse des points (ajustez selon vos besoins)
-    this.numPoints = numPoints || 50;  // Nombre de points
-    this.pointSize = pointSize || 3;   // Taille des points
-    this.opacity = opacity || 0.5;     // Opacité des points (de 0 à 1)
+    this.speed = speed || 1;
+    this.numPoints = numPoints || 50;
+    this.pointSize = pointSize || 3;
+    this.opacity = opacity || 0.5;
 
     this.initializeCanvas();
     this.createFlyingPoints();
@@ -45,12 +46,12 @@ class FlyingPointsCanvas {
 
   initializeCanvas() {
     this.canvas.width = window.innerWidth;
-    this.canvas.height = window.innerHeight;
+    this.canvas.height = this.parent.offsetHeight; // Set canvas height to parent div height
 
     window.addEventListener('resize', () => {
       this.canvas.width = window.innerWidth;
-      this.canvas.height = window.innerHeight;
-      this.createFlyingPoints(); // Réinitialiser les points lors du redimensionnement
+      this.canvas.height = this.parent.offsetHeight;
+      this.createFlyingPoints();
     });
   }
 
@@ -85,5 +86,5 @@ class FlyingPointsCanvas {
   }
 }
 
-// Instancier la classe FlyingPointsCanvas avec des paramètres personnalisés
-const flyingPointsCanvas = new FlyingPointsCanvas(0.5, 75, 5, 0.3);
+// Instanciate the FlyingPointsCanvas class with custom parameters
+const flyingPointsCanvas = new FlyingPointsCanvas('#home', 0.5, 75, 5, 0.3);
