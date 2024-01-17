@@ -207,7 +207,7 @@
   cursor: pointer;
   position: fixed;
   top: 0;
-  right: 20px;
+  right: 0px;
   z-index: 10001;
 }
 @media (min-width: 1200px) {
