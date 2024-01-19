@@ -368,6 +368,7 @@
 .container .mainn .skills .bars .html {
   padding-top: 60px;
   width: 40%;
+  border-radius: 10px;
 }
 @media (max-width: 1280px) {
   .container .mainn .skills .bars .html {
@@ -377,7 +378,8 @@
 .container .mainn .skills .bars .html .bar-skill {
   margin: 2rem 0;
   height: 5px;
-  background: var(--hint);
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #333533, #f5f5f5);
   position: relative;
 }
 .container .mainn .skills .bars .html .bar-skill .bar-skill-progress {
@@ -386,7 +388,8 @@
   top: 0;
   left: 0;
   width: 100%;
-  background: var(--rose);
+  border-radius: 10px;
+  background: linear-gradient(to bottom, var(--rose), #b9068f);
 }
 .container .mainn .skills .bars .html .bar-skill .bar-skill-dot {
   position: absolute;
@@ -400,7 +403,7 @@
 .container .mainn .skills .bars .html .bar-skill .bar-skill-percentage {
   position: absolute;
   top: 20px;
-  left: calc(100% - 5px);
+  left: calc(100% - 15px);
   transform: translate(0, -50%);
   color: white;
   font-size: 20px;
@@ -418,7 +421,8 @@
 .container .mainn .skills .bars .scss .bar-skill {
   margin: 2rem 0;
   height: 5px;
-  background: var(--hint);
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #333533, #7e7e7e);
   position: relative;
 }
 .container .mainn .skills .bars .scss .bar-skill .bar-skill-progress {
@@ -427,7 +431,8 @@
   top: 0;
   left: 0;
   width: 90%;
-  background: var(--rose);
+  border-radius: 10px;
+  background: linear-gradient(to bottom, var(--rose), #b9068f);
 }
 .container .mainn .skills .bars .scss .bar-skill .bar-skill-dot {
   position: absolute;
@@ -441,7 +446,7 @@
 .container .mainn .skills .bars .scss .bar-skill .bar-skill-percentage {
   position: absolute;
   top: 20px;
-  left: calc(90% - 5px);
+  left: calc(90% - 10px);
   transform: translate(0, -50%);
   color: white;
   font-size: 20px;
@@ -457,7 +462,9 @@
 .container .mainn .skills .bars .js .bar-skill {
   margin: 2rem 0;
   height: 5px;
-  background: var(--hint);
+  border-radius: 10px;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #333533, #7e7e7e);
   position: relative;
 }
 .container .mainn .skills .bars .js .bar-skill .bar-skill-progress {
@@ -466,7 +473,8 @@
   top: 0;
   left: 0;
   width: 15%;
-  background: var(--rose);
+  border-radius: 10px;
+  background: linear-gradient(to bottom, var(--rose), #b9068f);
 }
 .container .mainn .skills .bars .js .bar-skill .bar-skill-dot {
   position: absolute;
@@ -480,7 +488,7 @@
 .container .mainn .skills .bars .js .bar-skill .bar-skill-percentage {
   position: absolute;
   top: 20px;
-  left: calc(15% - 5px);
+  left: calc(15% - 10px);
   transform: translate(0, -50%);
   color: white;
   font-size: 20px;
