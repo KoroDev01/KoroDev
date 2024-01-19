@@ -8,10 +8,10 @@
 // header
 
 .container {
-  display: flex;
   flex-direction: column;
   height: 100%;
   width: 100%;
+  position: relative;
   .header.open {
     display: flex;
     position: fixed;
@@ -28,12 +28,11 @@
   header {
     background: var(--gris);
     height: 100%;
-    min-height: 100vh;
+    min-height: 100%;
     position: fixed;
-    top: 0;
     width: 15vw;
     border-right: black solid 3px;
-    z-index: 1;
+
     .header.open {
       /* Les styles pour le header ouvert vont ici */
     }
@@ -330,6 +329,7 @@
           padding-top: 60px;
           @include md {
             width: 70%;
+            padding-top: 0;
           }
           .bar-skill {
             margin: 2rem 0;
@@ -411,7 +411,7 @@
       flex-direction: column;
       background-color: var(--gris);
       align-items: center;
-
+      border-bottom: var(--grisclair) 2px solid;
       .projects-content {
         height: 100%;
         width: 100%;
@@ -421,7 +421,9 @@
 
         .site {
           display: flex;
-          flex-direction: row;
+          flex-direction: column;
+
+          align-items: center;
           flex-wrap: wrap;
           height: 100%;
           width: 100%;
@@ -463,4 +465,15 @@
       }
     }
   }
+}
+.footer {
+  padding-left: 15vw;
+  background-color: var(--gris);
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  color: #f5f5f5;
 }
