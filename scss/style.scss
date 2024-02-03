@@ -8,7 +8,6 @@
 // header
 
 .container {
-  flex-direction: column;
   height: 100%;
   width: 100%;
   position: relative;
@@ -19,7 +18,6 @@
     right: 0;
     width: 300px;
     height: 40vh;
-
     align-items: center;
     flex-direction: column;
     padding: 50px 20px;
@@ -32,7 +30,7 @@
     position: fixed;
     width: 15vw;
     border-right: black solid 3px;
-
+    z-index: 9999;
     .header.open {
       /* Les styles pour le header ouvert vont ici */
     }
@@ -119,7 +117,6 @@
   .mainn {
     display: flex;
     flex-direction: column;
-
     width: 100%;
     padding-left: 15vw;
     @include md {
@@ -130,7 +127,7 @@
       padding-left: 0;
     }
     .home {
-      background: url(/img/background.avif) center/cover fixed;
+      background: url(/img/background.avif) center/cover;
       height: 100vh;
       min-height: 100vh;
       width: 100%;
@@ -424,12 +421,13 @@
         height: 100%;
         width: 100%;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         flex-wrap: nowrap;
 
         .site {
           display: flex;
           flex-direction: column;
+          justify-content: space-around;
 
           align-items: center;
           flex-wrap: wrap;
@@ -452,6 +450,8 @@
             img {
               width: 100%;
               height: 100%;
+              max-width: 100%;
+              max-height: 100%;
             }
             h2 {
               margin-top: 10px;
@@ -481,6 +481,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  text-align: center;
   align-items: center;
   justify-content: space-evenly;
   color: #f5f5f5;

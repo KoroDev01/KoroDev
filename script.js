@@ -100,6 +100,6 @@ class FlyingPointsCanvas {
 }
 
 // Instanciate the FlyingPointsCanvas class with custom parameters
-const flyingPointsCanvas = new FlyingPointsCanvas('#home', 0.5, 75, 5, 0.3);
+const flyingPointsCanvas = new FlyingPointsCanvas('.home', 0.5, 75, 5, 0.3);
 
 
