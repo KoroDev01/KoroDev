@@ -295,6 +295,12 @@ main .experience .content h3 {
 main .experience .content p {
   margin: 0;
 }
+main .experience .content a{
+  color: #ff0d00;
+  font-style: italic;
+  border-bottom: 1px #ff0d00 solid ;
+  
+}
 main .experience .content ul {
   margin: 2rem 0;
   list-style: circle;
