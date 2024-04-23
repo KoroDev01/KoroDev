@@ -1,0 +1,39 @@
+.title {
+  &-small {
+    letter-spacing: 0.5rem;
+    font-size: 1.7rem;
+  }
+}
+
+.text {
+  &-primary {
+    color: var(--primary);
+  }
+  &-hint {
+    color: var(--hint);
+  }
+}
+
+.sep {
+  border: 1px solid rgb(98, 98, 98);
+  width: 100%;
+}
+.little-titles {
+  color: var(--rose);
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.big-titles {
+  font-size: 40px;
+  margin-bottom: 40px;
+  color: var(--text);
+}
+
+.ftr {
+  color: aliceblue;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}

@@ -1,0 +1,16 @@
+{
+  "name": "korodevsite",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass -w scss:css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bash": "^0.0.1",
+    "sass": "^1.69.5"
+  }
+}

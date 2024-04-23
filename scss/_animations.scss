@@ -1,0 +1,13 @@
+@keyframes neon-glow {
+  from {
+    opacity: 0.8;
+    color: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff,
+      0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff;
+  }
+  to {
+    opacity: 0.6;
+    color: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #fff, 0 0 80px #fff,
+      0 0 100px #fff, 0 0 120px #fff, 0 0 140px #fff;
+  }
+}
+

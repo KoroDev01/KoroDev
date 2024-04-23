@@ -1,0 +1,44 @@
+<script src="script.js"></script>
+<canvas id="flyingPointsCanvas"></canvas>
+
+main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+    width: 100vh;
+  
+  .home {
+    background: url(/img/background.avif) center/cover;
+    height: 100vh;
+    width: 100vh;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+
+    .text-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      h1 {
+        margin: 0;
+        font-size: 5em; 
+        color: white;
+      }
+      h2 {
+        margin: 0;
+        color: white;
+      }
+    }
+    .features{
+      background: black;
+      height: 100vh;
+      
+    }
+    // .....................
+  }
+}
