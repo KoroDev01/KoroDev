@@ -72,10 +72,7 @@
   color: white;
 }
 
-/* Landscape phones and down */
-/* Landscape phone to portrait tablet */
-/* Portrait tablet to landscape and desktop */
-/* Large desktop */
+
 @keyframes neon-glow {
   from {
     opacity: 0.8;
